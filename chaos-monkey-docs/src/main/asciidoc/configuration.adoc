@@ -76,7 +76,7 @@ You can decide which attacks you want to run and which parts of your application
 |FALSE
 
 |chaos.monkey.assaults.memoryActive
-|Memory assault avtive
+|Memory assault active
 |TRUE or FALSE
 |FALSE
 
@@ -99,6 +99,21 @@ You can decide which attacks you want to run and which parts of your application
 |Final fraction of used memory by assault. `0.95` equals 95 %.
 |min=0.01, max=0.95
 |0.25
+
+|chaos.monkey.assaults.cpuActive
+|CPU assault active
+|TRUE or FALSE
+|FALSE
+
+|chaos.monkey.assaults.cpuMillisecondsHoldLoad
+|Duration to assault cpu when requested load is reached in ms.
+|min=1500, max=Integer.MAX_VALUE
+|90000
+
+|chaos.monkey.assaults.cpuLoadTargetFraction
+|Final fraction of used cpu by assault. `0.95` equals 95 %.
+|min=0.01, max=0.95
+|0.9
 
 |chaos.monkey.assaults.runtime.scope.assault.cron.expression
 |Cron expression like `*/1 * * * * ?` can be set to enable chaos monkey runtime assaults on a schedule

@@ -69,6 +69,18 @@ public class AssaultPropertiesUpdate {
   @DecimalMin("0.05")
   private Double memoryFillTargetFraction;
 
+  @Nullable private Boolean cpuActive;
+
+  @Nullable
+  @Min(value = 1500)
+  @Max(value = Integer.MAX_VALUE)
+  private Integer cpuMillisecondsHoldLoad;
+
+  @Nullable
+  @DecimalMax("1.0")
+  @DecimalMin("0.01")
+  private Double cpuLoadTargetFraction;
+
   @Nullable private String runtimeAssaultCronExpression;
 
   @Nullable private List<String> watchedCustomServices;
@@ -95,6 +107,11 @@ public class AssaultPropertiesUpdate {
     applyTo(memoryMillisecondsWaitNextIncrease, t::setMemoryMillisecondsWaitNextIncrease);
     applyTo(memoryFillIncrementFraction, t::setMemoryFillIncrementFraction);
     applyTo(memoryFillTargetFraction, t::setMemoryFillTargetFraction);
+
+    applyTo(cpuActive, t::setCpuActive);
+    applyTo(cpuMillisecondsHoldLoad, t::setCpuMillisecondsHoldLoad);
+    applyTo(cpuLoadTargetFraction, t::setCpuLoadTargetFraction);
+
     applyTo(runtimeAssaultCronExpression, t::setRuntimeAssaultCronExpression);
     applyTo(watchedCustomServices, t::setWatchedCustomServices);
   }

@@ -8,6 +8,7 @@
 // - https://github.com/codecentric/chaos-monkey-spring-boot/pull/xxx[#xxx] Added example entry. Please don't remove.
 
 === New Features
+ - https://github.com/codecentric/chaos-monkey-spring-boot/pull/241[#239] Added CPU Assault
 // - https://github.com/codecentric/chaos-monkey-spring-boot/pull/xxx[#xxx] Added example entry. Please don't remove.
 
 === Contributors

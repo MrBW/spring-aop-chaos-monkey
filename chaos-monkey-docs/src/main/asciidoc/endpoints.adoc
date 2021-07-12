@@ -162,6 +162,9 @@ Watcher config has changed
 "memoryMillisecondsWaitNextIncrease": 1000,
 "memoryFillIncrementFraction": 0.15,
 "memoryFillTargetFraction": 0.25,
+"cpuActive": false,
+"cpuMillisecondsHoldLoad": 90000,
+"cpuLoadTargetFraction": 0.9,
 "runtimeAssaultCronExpression": "OFF",
 "watchedCustomServices": null
 }
@@ -279,6 +282,10 @@ component=false
 
 |toggleMemoryAssault
 |Toggle Memory Assault status
+|New value (true/false)
+
+|toggleCpuAssault
+|Toggle CPU Assault status
 |New value (true/false)
 
 |isChaosMonkeyActive

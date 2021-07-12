@@ -24,7 +24,10 @@ Memory Assaults attack the memory of the Java Virtual Machine.
 
 IMPORTANT: The Memory assault is heavily depending on the Java version you are using. We are testing with the default garbage collectors of each Java version. On Java 8 the fill rate is limited to 256 MB per slice!
 
+=== CPU Assault ===
+
+CPU Assaults attack the CPU of the Java Virtual Machine.
 
 === Chaos Monkey Assault Scheduler ===
 
-You can schedule Chaos Monkey Runtime Assaults (Memory, AppKiller) using cron expressions.
+You can schedule Chaos Monkey Runtime Assaults (Memory, CPU, AppKiller) using cron expressions.

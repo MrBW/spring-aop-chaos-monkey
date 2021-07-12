@@ -17,6 +17,7 @@
 
 package de.codecentric.spring.boot.chaos.monkey.configuration;
 
+import com.sun.management.OperatingSystemMXBean;
 import de.codecentric.spring.boot.chaos.monkey.assaults.*;
 import de.codecentric.spring.boot.chaos.monkey.component.*;
 import de.codecentric.spring.boot.chaos.monkey.configuration.toggles.ChaosToggleNameMapper;
@@ -27,6 +28,7 @@ import de.codecentric.spring.boot.chaos.monkey.endpoints.ChaosMonkeyJmxEndpoint;
 import de.codecentric.spring.boot.chaos.monkey.endpoints.ChaosMonkeyRestEndpoint;
 import de.codecentric.spring.boot.chaos.monkey.watcher.aspect.*;
 import java.io.IOException;
+import java.lang.management.ManagementFactory;
 import java.nio.charset.Charset;
 import java.util.List;
 import org.slf4j.Logger;
@@ -122,6 +124,12 @@ public class ChaosMonkeyConfiguration {
   @Bean
   public MemoryAssault memoryAssault() {
     return new MemoryAssault(Runtime.getRuntime(), settings(), publisher());
+  }
+
+  @Bean
+  public CpuAssault cpuAssault() {
+    return new CpuAssault(
+        ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class), settings(), publisher());
   }
 
   @Bean

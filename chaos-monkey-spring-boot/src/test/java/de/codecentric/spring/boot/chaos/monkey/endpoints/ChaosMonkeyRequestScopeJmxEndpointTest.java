@@ -87,6 +87,14 @@ class ChaosMonkeyRequestScopeJmxEndpointTest {
   }
 
   @Test
+  void toggleCpuAssault() {
+    boolean cpuActive = chaosMonkeySettings.getAssaultProperties().isCpuActive();
+    chaosMonkeyJmxEndpoint.toggleCpuAssault();
+
+    assertThat(chaosMonkeyJmxEndpoint.getAssaultProperties().getCpuActive(), not(cpuActive));
+  }
+
+  @Test
   void isChaosMonkeyActive() {
     assertThat(
         chaosMonkeyJmxEndpoint.isChaosMonkeyActive(),

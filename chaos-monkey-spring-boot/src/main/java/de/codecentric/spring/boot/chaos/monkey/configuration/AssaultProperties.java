@@ -77,6 +77,16 @@ public class AssaultProperties {
   @DecimalMin("0.01")
   private double memoryFillTargetFraction = 0.25;
 
+  private volatile boolean cpuActive = false;
+
+  @Min(value = 1500)
+  @Max(value = Integer.MAX_VALUE)
+  private int cpuMillisecondsHoldLoad = 90000;
+
+  @DecimalMax("1.0")
+  @DecimalMin("0.01")
+  private double cpuLoadTargetFraction = 0.9;
+
   @Value("${chaos.monkey.assaults.runtime.scope.assault.cron.expression:OFF}")
   private String runtimeAssaultCronExpression;
 
