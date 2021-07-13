@@ -25,7 +25,7 @@ abstract class ChaosMonkeyBaseAspect {
   @Pointcut("within(de.codecentric.spring.boot.chaos.monkey..*)")
   public void classInChaosMonkeyPackage() {}
 
-  @Pointcut("!within(is(FinalType)) && execution(* *.*(..))")
+  @Pointcut("(!within(is(FinalType)) || within(com.sun.proxy.*)) && execution(* *.*(..))")
   public void allPublicMethodPointcut() {}
 
   @Pointcut(
